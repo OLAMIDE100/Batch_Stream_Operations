@@ -1,0 +1,27 @@
+{
+  "namespace": "bigspark_mide",
+  "type": "record",
+  "name": "result",
+  "fields": [
+    {
+      "name": "Store",
+      "type": "string"
+    },
+    {
+      "name": "quantity",
+      "type": "string"
+    },
+    {
+      "name": "Revenue",
+      "type": "string"
+    },
+    {
+      "name": "year",
+      "type": "string"
+    },
+    {
+      "name": "brand",
+      "type": "string"
+    }
+  ]
+}

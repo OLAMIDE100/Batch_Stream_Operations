@@ -1,0 +1,11 @@
+{
+  "namespace": "mide_bigspark",
+  "type": "record",
+  "name": "SalesKey",
+  "fields": [
+    {
+      "name": "Store",
+      "type": "string"
+    }
+  ]
+}
