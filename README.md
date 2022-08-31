@@ -2,10 +2,6 @@
 
 This project contains the following containers:
 
-* postgres: Postgres database for Airflow metadata and a Test database to test whatever you want.
-    * Image: postgres:9.6
-    * Database Port: 5432
-    * References: https://hub.docker.com/_/postgres
 
 * airflow-webserver: Airflow webserver and Scheduler.
     * Image: docker-airflow-spark:1.10.7_3.1.2
@@ -24,13 +20,7 @@ This project contains the following containers:
       * https://github.com/bitnami/bitnami-docker-spark
       * https://hub.docker.com/r/bitnami/spark/tags/?page=1&ordering=last_updated
 
-* jupyter-spark: Jupyter notebook with pyspark for interactive development.
-  * Image: jupyter/pyspark-notebook:spark-3.1.2
-  * Port: 8888
-  * References:
-    * https://hub.docker.com/layers/jupyter/pyspark-notebook/spark-3.1.2/images/sha256-37398efc9e51f868e0e1fde8e93df67bae0f9c77d3d3ce7fe3830faeb47afe4d?context=explore
-    * https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-pyspark-notebook
-    * https://hub.docker.com/r/jupyter/pyspark-notebook/tags/
+
 
 ## Architecture components
 
@@ -38,9 +28,6 @@ This project contains the following containers:
 
 ## Setup
 
-### Clone project
-
-    $ git clone https://github.com/cordon-thiago/airflow-spark
 
 ### Build airflow Docker
 
@@ -187,8 +174,4 @@ More info at: https://github.com/puckel/docker-airflow#build
     Stop Containers:
     $ docker-compose -f <compose-file.yml> down --remove-orphans
 
-# Extras
-## Spark + Postgres sample
 
-* The DAG [spark-postgres.py](dags/spark-postgres.py) loads [movies.csv](spark/resources/data/movies.csv) and [ratings.csv](spark/resources/data/ratings.csv) data into Postgres tables and query these tables to generate a list of top 10 movies with more rates.
-  * This DAG runs the load-postgres.py and read-postgres.py applications. These applications are also available in the notebooks [load-postgres-notebook.ipynb](notebooks/load-postgres-notebook.ipynb) and [read-postgres-notebook.ipynb](notebooks/read-postgres-notebook.ipynb).
